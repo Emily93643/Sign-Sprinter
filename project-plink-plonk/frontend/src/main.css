@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+SIGN SPRINTER PALETTE:
+BACKGROUND: e3cdc8
+HAND: e28b80
+HAND SHADOW: cd7877
+*/
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #e3cdc8;
+  color: #793737;
+  
+  font-synthesis: weight;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  margin: auto;
+  gap: 0.5em;
+  background-color: #e3cdc8;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* inputs */
+input[type="text"], input[type="password"] {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  background-color: white;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  font-size: 1rem;
+  outline-style: solid;
+  outline-width: 5px;
+  outline-offset: -1px;
+  outline-color: #adaeb1;
+  max-width: 300px;
+}
+
+input[type=radio] {
+  outline: none;
+  width: 20px;
+  height: 20px;
+  accent-color: #cd7877;
+}
+
+label {
+  padding: 0 0.4em;
+  line-height: 1;
+}
+
+body {
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+div {
+  margin: 60px 0;
+}
+
+.lobby-div div{
+  margin: 0;
+}
+
+/* Links */
+a {
+  font-weight: 600;
+  font-size: large;
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  color: #f2536e;
+  text-decoration-color: #f2536e;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 4em;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 900;
+  margin: 4px 0;
+}
+
+h3 {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.message {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+
+a, .submitButton {
+  font-weight: 600;
+  font-size: 1.5em;
+  padding: 0.5em;
+  transition: color 0.3s ease-out;
+}
+
+#buttons {
+  display: flex;
+  gap: 20px; 
+  justify-content: center;  
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #742834;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  max-width: 300px;
+  color: #ecd9d9;
+}
+
+
+button:hover {
+  border-color: #ff6890;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.submitButton:hover {
+  cursor: hover;
+  color: #f2536e;
+}
+
+th {
+  font-size: 1.5em;
+}
+
+td a {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+td {
+  text-align: center;
+}
+
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ddfde4;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #206848; 
+  border-radius: 8px; 
+}
+
+/* For when you press "back icon" in Lobby */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.popup2 {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.popup2 button {
+  margin: 10px;
+  color:#ffffff
+}
+
+#stay {
+  color:#e8fff3
+}
+
+#leave {
+  color:#fff1f1
+}
+
+.notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 1%;
+  width: fit-content;
+  background-color: #43c287;
+  color: #131313;
+  padding: 10px;
+  text-align: center;
+  z-index: 15;
+}
+
+#trophy-gif {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#lobby-chat {
+  height: 600px;
+  overflow-y: auto;  
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+
+  max-height: 80vh;  
+  overflow-y: scroll; 
+}
+
+#chat-input{
+  width: 80%;
+  margin-right: "10px"
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+#lobby-chat::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #742834;
+}
+#lobby-chat::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #271919;
+}

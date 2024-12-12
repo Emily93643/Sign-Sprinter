@@ -1,0 +1,21 @@
+services:
+
+  # Frontend 
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend 
+      dockerfile: frontend.dockerfile  
+    restart: always
+    ports:
+      - 3000:3000
+
+  # Backend 
+  backend:
+    container_name: backend
+    build:
+      context: ./backend 
+      dockerfile: backend.dockerfile  
+    restart: always
+    ports:
+      - 4000:4000
